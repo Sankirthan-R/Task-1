@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <script src="script.js"></script>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.querySelector('.memory-modal');
+            const modalContent = modal.querySelector('.modal-media-container');
+            const closeBtn = modal.querySelector('.modal-close');
+            
+            
+            document.querySelectorAll('.memory-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const type = item.getAttribute('data-type');
+                    if (type === 'video') {
+                        const video = document.createElement('video');
+                        video.src = item.getAttribute('data-src');
+                        video.controls = true;
+                        video.autoplay = true;
+                        modalContent.innerHTML = '';
+                        modalContent.appendChild(video);
+                    } else {
+                        const img = document.createElement('img');
+                        img.src = item.querySelector('img').src;
+                        modalContent.innerHTML = '';
+                        modalContent.appendChild(img);
+                    }
+                    modal.classList.add('active');
+                });
+            });
+            
+           
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+                const video = modalContent.querySelector('video');
+                if (video) video.pause();
+            });
+            
+           
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    const video = modalContent.querySelector('video');
+                    if (video) video.pause();
+                }
+            });
+        });
+
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const profileTrigger = document.getElementById('profile-trigger');
+            const heroSection = document.getElementById('hero-section');
+            
+            profileTrigger.addEventListener('click', () => {
+                heroSection.classList.toggle('expanded');
+            });
+        });
+        
+    </script>
+    <title>WELCOME!!!!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    
+    
+
+    <div class="container">
+        <header class="glass-effect">
+            <h1>WELCOME!!!</h1>
+            <p class="subtitle">TO MY TASK WEBSITE</p>
+        </header>
+
+        <section class="hero glass-effect" id="hero-section">
+            <div class="hero-container">
+                <div class="profile-pic" id="profile-trigger">
+                    <img src="top1.jpeg" alt="Sankirthan Rao">
+                </div>
+                <div class="expanded-content">
+                    <div class="message-box glass-effect">
+                        <h3>Hola,</h3>
+                        <p>I'm Sankirthan pursuing B.tech in Artificial Intelligence and Data Science in Nitte Mahalinga Adyantaya Memorial Institute of Technology.</p>
+                        <p>I am passionate about coding and love to learn new technologies. I also like to edit videos and post short reels.Few of my works are given below in Edits section</p>
+                        <p class="signature">Best,<br>Sankirthan</p>
+                    </div>
+                    <div class="featured-image">
+                        <img src="top1.jpeg" alt="Sankirthan Rao">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="memories glass-effect">
+            <h2>My Gallery</h2>
+            <div class="memory-grid">
+                <div class="memory-item" >
+                    <img src="a1.jpeg" alt="Album 1">
+                </div>
+                <div class="memory-item" >
+                    <img src="a2.jpeg" alt="Album 2">
+                </div>
+                <div class="memory-item" >
+                    <img src="a3.jpeg" alt="Album 3">
+                </div>
+                <div class="memory-item"  data-type="video" data-src="ap4.mp4">
+                    <img src="a4.jpeg" alt="Album 4">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="memory-item"  data-type="video" data-src="ap5.mp4">
+                    <img src="a5.jpeg" alt="Album 5">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="memory-item"  data-type="video" data-src="ap6.mp4">
+                    <img src="a6.jpeg" alt="Album 6">
+                    <div class="play-button">▶</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="memories glass-effect">
+            <section class="Videosmem">
+                <h2>Edits</h2>
+                <div class="memory-ground">
+                    <div class="memory-item" data-type="video" data-src="e1.mp4">
+                        <img src="ep3.jpeg" alt="Video 1">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="memory-item" data-type="video" data-src="e2.MP4">
+                        <img src="ep2.jpeg" alt="Video 2">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="memory-item" data-type="video" data-src="e3.MP4">
+                        <img src="ep4.jpeg" alt="Video 3">
+                        <div class="play-button">▶</div>
+                    </div>
+                
+                </div>
+            </section>
+        </section>
+        
+       
+        <div class="memory-modal">
+            <div class="modal-content glass-effect">
+                <div class="modal-close">&times;</div>
+                <div class="modal-media-container">
+                  
+                </div>
+            </div>
+        </div>
+
+        <nav class="navigation-buttons glass-effect">
+            <button onclick="location.href='birthday-website/pages/A.html'" class="nav-btn">A</button>
+            <button onclick="location.href='birthday-website/pages/B.html'" class="nav-btn">B </button>
+            <button onclick="location.href='birthday-website/pages/C.html'" class="nav-btn">C</button>
+            <button onclick="location.href='birthday-website/pages/D.html'" class="nav-btn">D</button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
