@@ -127,8 +127,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     });
-});
 
+
+
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            root.classList.toggle('dark');
+            // Save preference in localStorage
+            if (root.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Load preference on page load
+        if (localStorage.getItem('theme') === 'dark') {
+            root.classList.add('dark');
+        }
+    }
+});        
 
 function navigateToPage(page) {
     const routes = {
@@ -141,5 +163,9 @@ function navigateToPage(page) {
     if (routes[page]) {
         window.location.href = routes[page];
     }
-}
 
+
+
+
+
+}

@@ -231,7 +231,7 @@ h1 {
     object-fit: cover;
 }
 
-/* Expanded state styles */
+
 .hero.expanded {
     min-height: 600px;
 }
@@ -270,7 +270,6 @@ h1 {
     }
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .expanded-content {
         grid-template-columns: 1fr;
@@ -339,7 +338,7 @@ h1 {
     opacity: 1;
 }
 
-/* Modal styles */
+
 .memory-modal {
     position: fixed;
     top: 0;
@@ -450,7 +449,7 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Hide navigation buttons on scroll */
+
 .navigation-buttons.hidden {
     transform: translateY(150%);
     opacity: 0;
@@ -483,20 +482,19 @@ h1 {
 
 .navigation-buttons {
     transition: all 0.3s ease;
-    /* Your existing navigation styles */
+    
 }
 
-/* Maximized state (default/scroll up) */
+
 .navigation-buttons.maximized {
     transform: scale(1);
     opacity: 1;
-    /* Add any other styles for full size */
+    /
 }
 
-/* Minimized state (scroll down) */
+
 .navigation-buttons.minimized {
-    transform: scale(0.7); /* Makes it 70% of original size */
+    transform: scale(0.7);
     opacity: 0.8;
-    /* Or you can use different styles like: */
-    /* height: 40px; width: 200px; (smaller dimensions) */
+    
 }
